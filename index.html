@@ -5,87 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystals Collector Game!</title>
+    <title>Document</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style type="text/css">
+        .Stanley-Images {
+            width: 300px;
+            height: 400px;
+        }
+    </style>
 
 </head>
 
 <body>
-    <div class="container">
-        <!-- This will be creating the first header -->
-        <div class="row">
-            <div class="col-12">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <h1 class="display-4">Crystals Collector Game!</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- This is creating the instructions -->
-        <div class="row">
-            <div class="col-12">
-                <div class="jumbotron">
-                    <p class="lead">Crystals Collector Game Instructions: </p>
-                    <hr class="my-4">
-                    <p>1. You will be given a random number at the start of the game.
-                    </p>
-                    <p>2. There are four crystals below. By clicking on a crystal you will add a specific amount of
-                        points
-                        to your total score.
-                    </p>
-                    <p>3. You win the game by making your total score to random number, you lose the game if your total
-                        scre
-                        goes above the random nnumber.
-                    </p>
-                    <p>
-                        4. The value of each crystal is hidden from you until you click on it.
-                    </p>
-                    <p>
-                        5. Each time the game starts, the game will change the values of each crystal.
-                    </p>
-                </div>
-            </div>
-        </div>
+    <!-- This is where my header items will go  -->
+    <h1>Number to Guess: <span id="user-guess-number"></span></h1>
 
-        <!-- This is where the crystal number is (the one the user has to bet) and the win/lose score -->
-        <div class="row">
-            <div class="col-6">
-                <p> this is the score to bet:</p>
-            </div>
-            <div class="col-6">
-                <p> Wins: <span class="User-Wins"></span></p>
-                <p> Losses: <span class="User-losses"></span></p>
-            </div>
-        </div>
+    <!-- This is my image of stan  -->
+    <div id="Stanley-Images"></div>
 
-        <!-- This is where the images will go -->
-        <div class="row">
-            <div class="col-4 image-1">
-                <img src="./assests/images/Stan-In-The-Wind.jpg" class="img-thumbnail" alt="Stanley in the Wind">
-            </div>
-            <div class="col-4 image-2">
-                <img src="./assests/images/Stan-In-The-Wind.jpg" class="img-thumbnail" alt="Stanley in the Wind">
-            </div>
-            <div class="col-4 image-3">
-                <img src="./assests/images/Stan-In-The-Wind.jpg" class="img-thumbnail" alt="Stanley in the Wind">
-            </div>
-        </div>
+    <!-- This is my jQuery libary -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <!-- This is where the user count will increase/decrease -->
-        <div class="row">
-            <div class="col-6">
-                <p> Your Total Score is:</p>
-            </div>
-            <div class="col-6">
-                <p><span class="User-Wins"></span></p>
-            </div>
-        </div>
+    <!-- This is where my js cosde will go  -->
+    <script type="text/javascript">
 
-    </div>
-    <script type="text/javascript" src="./assests/javascript/game.js"></script>
+        // This is the number that the user must guess 
+        var goalNumber = 50;
+
+        $("#user-guess-number").text(goalNumber);
+
+        // This is calulating the user's score 
+        var count = 0;
+
+        // These are the numbers that each image can have 
+        var numberOptions = [7, 10, 4, 20]; 
+
+
+        // This is gettnig the images on the screen 4 times 
+        for (var i = 0; i < numberOptions.length; i++) {
+            var imageOfStan = $("<img>"); 
+            imageOfStan.addClass("image-Stan"); 
+            imageOfStan.attr("src", "./assests/images/Stan-In-The-Wind.jpg"); 
+            imageOfStan.attr("data-stanvalue", numberOptions[i]); 
+            $("#Stanley-Images").append(imageOfStan); 
+        }
+
+
+        $(".image-Stan").on("click", function () {
+            
+            var stanValue = ($(this).attr("data-stanvalue")); 
+            stanValue = parseInt(stanValue); 
+            count += stanValue; 
+
+            alert("Your new score is: " + count);
+
+            //This is the function that will create the Win and Lose Alerts if the user's score matches the guess number 
+            if (count === goalNumber) {
+
+                alert("You are Winner!");
+            }
+            else if (count >= goalNumber) {
+
+                alert("You lose! So Sad!");
+
+            }
+
+        });
+
+    </script>
+
 </body>
 
 </html>

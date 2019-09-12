@@ -1,0 +1,71 @@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<div class="container">
+        <!-- This will be creating the first header -->
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">Crystals Collector Game!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is creating the instructions -->
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron">
+                    <p class="lead">Crystals Collector Game Instructions: </p>
+                    <hr class="my-4">
+                    <p>1. You will be given a random number at the start of the game.
+                    </p>
+                    <p>2. There are four crystals below. By clicking on a crystal you will add a specific amount of
+                        points
+                        to your total score.
+                    </p>
+                    <p>3. You win the game by making your total score to random number, you lose the game if your total
+                        scre
+                        goes above the random nnumber.
+                    </p>
+                    <p>
+                        4. The value of each crystal is hidden from you until you click on it.
+                    </p>
+                    <p>
+                        5. Each time the game starts, the game will change the values of each crystal.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is where the crystal number is (the one the user has to bet) and the win/lose score -->
+        <div class="row">
+            <div class="col-6">
+                <p> this is the score to bet:</p>
+            </div>
+            <div class="col-6">
+                <p> Wins: <span class="User-Wins"></span></p>
+                <p> Losses: <span class="User-losses"></span></p>
+            </div>
+        </div>
+
+        <!-- This is where the images will go -->
+        <div class="row">
+            <div class="col-12 image-1">
+                <img src="./assests/images/Stan-In-The-Wind.jpg" class="img-of-stan" alt="Stanley in the Wind">
+            </div>
+        </div>
+
+        <!-- This is where the user count will increase/decrease -->
+        <div class="row">
+            <div class="col-6">
+                <p> Your Total Score is:</p>
+            </div>
+            <div class="col-6">
+                <p><span class="User-Wins"></span></p>
+            </div>
+        </div>
+
+    </div>
+    
