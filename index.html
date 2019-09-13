@@ -52,9 +52,9 @@
 </div>
    
 <div class="user-win-lose-score">
-    <p>Wins:</p>
+    <p>Wins: <span class="user-wins"></span></p>
     <br>
-    <p>Losses:</p>
+    <p>Losses: <span class="user-lose"></span></p>
     <br>
 </div>
     <!-- This is my image of stan  -->
@@ -71,14 +71,29 @@
         <span class="user-socre"></span>
     </div>
 
+
+
+
+
+
+
     <!-- This is my jQuery libary -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+
 
     <!-- This is where my js cosde will go  -->
     <script type="text/javascript">
 
         // This is the number that the user must guess 
         var goalNumber = 50;
+        var totalScore = 0; 
+        var wins = 0; 
+        var lose = 0; 
 
         $("#user-guess-number").text(goalNumber);
 
@@ -105,19 +120,23 @@
             stanValue = parseInt(stanValue); 
             count += stanValue; 
 
-            alert("Your new score is: " + count);
+            alert("Your new score is: " + count)
 
             //This is the function that will create the Win and Lose Alerts if the user's score matches the guess number 
             if (count === goalNumber) {
 
                 alert("You are Winner!");
+
             }
             else if (count >= goalNumber) {
 
                 alert("You lose! So Sad!");
+            }; 
 
-            }
 
+            document.getElementsByClassName("user-socre").textConent = totalScore; 
+            document.getElementsByClassName("user-wins").textConent = wins; 
+            document.getElementsByClassName("user-lose").textConent = lose; 
         });
 
     </script>
