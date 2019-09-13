@@ -2,30 +2,33 @@
 $(document).ready(function () {
 
     //++++++++++++++++++++++++++This is creating the random number ++++++++++++++++++++++++++
-    let goalNumber = Math.floor(Math.random() * 101 + 21);
 
     $("#user-guess-number").text(goalNumber);
+    let goalNumber = Math.floor(Math.random() * 101 + 21);
 
-    let btn1 = Math.floor(Math.random() * 11 + 1);
-    let btn2 = Math.floor(Math.random() * 11 + 1);
-    let btn3 = Math.floor(Math.random() * 11 + 1);
-    let btn4 = Math.floor(Math.random() * 11 + 1);
-
+    //++++++++++++++++++++++++++Defining all Varables ++++++++++++++++++++++++++
     var totalScore = 0;
     var wins = 0;
     var lose = 0;
     var displayWins = $("user-wins");
     var displayLoses = $("user-lose");
     var displayUserScore = $("user-socre");
+    var button1 = $("btn1");
+    var button2 = $("btn2");
+    var button3 = $("btn3");
+    var button4 = $("btn4");
 
-    // These are the numbers that each image can have 
-    var numberOptions = [7, 10, 4, 20];
+
+    //++++++++++++++++++++++++++ Createing random values for each button/image++++++++++++++++++++++++++
+    button1 = Math.floor(Math.random() * 11 + 1);
+    button2 = Math.floor(Math.random() * 11 + 1);
+    button3 = Math.floor(Math.random() * 11 + 1);
+    button4 = Math.floor(Math.random() * 11 + 1);
 
 
     displayWins.text(wins);
     displayLoses.text(lose);
     displayUserScore.text(totalScore);
-
 
 
 
