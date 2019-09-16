@@ -21,7 +21,7 @@ for (var i = 0; i < 4; i++) {
     var crystal = $("<div>");
     crystal.attr({
         "class": 'crystal',
-        "data-number": random,
+        "data-number": random
     });
 
     $(".crystals").append(crystal);
