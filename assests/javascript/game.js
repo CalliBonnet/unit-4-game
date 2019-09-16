@@ -4,14 +4,19 @@ let lost;
 let win;
 
 
-randomResult = Math.floor(Math.random() * 99 - 30); 
 
-$("#result").html('Random Result: '); 
+// This is finding a random number for the user to guess to 
+randomResult = Math.floor(Math.random() * 69) + 30;
+console.log(randomResult);
 
-//these are the crystals 
+$("#result").html('Random Result: ' + randomResult);
+
+
+
+//these are making the crystals appear on the screen 
 for (var i = 0; i < 4; i++) {
 
-    var random = Math.floor(Math.random() * 12);
+    var random = Math.floor(Math.random() * 11) + 1;
 
     var crystal = $("<div>");
     crystal.attr({
@@ -20,4 +25,13 @@ for (var i = 0; i < 4; i++) {
     });
 
     $(".crystals").append(crystal);
-}; 
+};
+
+
+
+
+// this is when you click on a crystal, a number appears 
+$(".crystal").on('click', function () {
+
+    console.log($(this));
+}); 

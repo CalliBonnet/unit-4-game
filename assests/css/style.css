@@ -3,10 +3,12 @@
 display: flex; 
 justify-content: space-around; 
 align-items: center; 
+border: solid red 2px; 
+height: 20px;
 }; 
 
 .crystal{
-    border-color: 2px solid red; 
+    border: 10px solid green; 
     height: 200px; 
     width: 200px;
 }; 
