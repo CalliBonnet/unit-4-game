@@ -2,6 +2,35 @@ body{
     background-color: lightpink; 
 }
 
+#header{ 
+    background-color: white; 
+    padding-left: 20px; 
+    padding-bottom: 10px; 
+    padding-top: 1px; 
+}
+
+.resultP{ 
+    background-color: white; 
+    padding: 10px 0px; 
+ 
+}
+
+#scoringDiv{
+    background-color: white; 
+    padding: 5px 0px; 
+}
+
+h1{ 
+    color: palevioletred; 
+}
+
+h3{ 
+    color: palevioletred; 
+}
+
+li{ 
+    line-height:1.8; 
+}
 
 .crystals{
 display: flex; 
