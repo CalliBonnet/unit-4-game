@@ -52,7 +52,7 @@ $(document).on('click', ".crystal", function () {
     if (pervious > randomResult) {
         lost++;
 
-        $("#Lost").html("Lost:" + lost);
+        $("#Lost").html(lost);
         pervious = 0; 
 
         resetAndStartGame(); 
@@ -61,7 +61,7 @@ $(document).on('click', ".crystal", function () {
     else if (pervious === randomResult) {
         win++;
 
-        $("#Win").html("Wins:" + win);
+        $("#Win").html(win);
         pervious = 0; 
         
         resetAndStartGame(); 
