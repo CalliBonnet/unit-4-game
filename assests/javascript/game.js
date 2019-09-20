@@ -1,36 +1,58 @@
 
 var randomResult;
-let lost;
-let win;
+let lost = 0;
+let win = 0;
+var pervious = 0;
 
-//setters 
-//getters 
+var resetandStartGame = function () {
 
 
-// This is finding a random number for the user to guess to 
-randomResult = Math.floor(Math.random() * 69) + 30;
-console.log(randomResult);
+    // This is finding a random number for the user to guess to 
+    randomResult = Math.floor(Math.random() * 69) + 30;
+    console.log(randomResult);
 
-$("#result").html('Random Result: ' + randomResult);
+    $("#result").html('Random Result: ' + randomResult);
 
-//these are making the crystals appear on the screen 
-for (var i = 0; i < 4; i++) {
+    //these are making the crystals appear on the screen 
+    for (var i = 0; i < 4; i++) {
 
-    var random = Math.floor(Math.random() * 11) + 1;
+        var random = Math.floor(Math.random() * 11) + 1;
 
-    var crystal = $("<div>");
+        var crystal = $("<div>");
         crystal.attr({
             "class": 'crystal',
             "data-number": random
         });
 
-    $(".crystals").append(crystal);
-};
+        $(".crystals").append(crystal);
+    };
+}
+
+resetandStartGame(); 
+
 
 
 // this is when you click on a crystal, a number appears 
 $(".crystal").on('click', function () {
 
-    console.log($(this).attr('data-number
-    '));
+    var num = parseInt($(this).attr('data-number'));
+
+    pervious += num;
+    console.log(pervious);
+
+    if (pervious > randomResult) {
+        lost--;
+
+        $("#Lost").html(lost);
+        console.log("you Lost!")
+    }
+    else if (pervious === randomResult) {
+        win++;
+
+        $("#Win").html(win);
+
+        console.log("You win!");
+    };
+
+
 }); 
