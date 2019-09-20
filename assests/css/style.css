@@ -1,3 +1,7 @@
+body{ 
+    background-color: lightpink; 
+}
+
 
 .crystals{
 display: flex; 
@@ -7,9 +11,10 @@ height: 20px;
 }
 
 .crystal{
-    border: 1px solid green; 
-    height: 50px; 
-    width: 50px;
+    border: 2px solid rgb(253, 0, 219); 
+    height: 90px; 
+    width: 150px;
+    content:url(https://www.gaia.com/wp-content/uploads/article-migration-image-how-to-work-with-crystals.png);
     
 }
 
