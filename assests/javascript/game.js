@@ -8,7 +8,7 @@ var resetAndStartGame = function () {
     $(".crystals").empty(); 
 
     // This is finding a random number for the user to guess to 
-    randomResult = Math.floor(Math.random() * 69) + 30;
+    randomResult = Math.floor(Math.random() * 19) + 101;
     console.log(randomResult);
 
     //this is populating the ramdon number that the user must guess to on the screen 
@@ -18,7 +18,7 @@ var resetAndStartGame = function () {
     //these are making the crystals appear on the screen 
     for (var i = 0; i < 4; i++) {
 
-        var random = Math.floor(Math.random() * 11) + 1;
+        var random = Math.floor(Math.random() * 12) + 1;
 
         var crystal = $("<div>");
         crystal.attr({
@@ -52,7 +52,7 @@ $(document).on('click', ".crystal", function () {
     if (pervious > randomResult) {
         lost++;
 
-        $("#Lost").html(lost);
+        $("#Lost").html("Your total number of loses: " + lost);
         pervious = 0; 
 
         resetAndStartGame(); 
@@ -61,7 +61,7 @@ $(document).on('click', ".crystal", function () {
     else if (pervious === randomResult) {
         win++;
 
-        $("#Win").html(win);
+        $("#Win").html("Your total of wins: " + win);
         pervious = 0; 
         
         resetAndStartGame(); 
