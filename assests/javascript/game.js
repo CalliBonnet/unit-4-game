@@ -28,6 +28,8 @@ var resetAndStartGame = function () {
 
         $(".crystals").append(crystal);
     };
+    $("#pervious").html(pervious); 
+    
 }
 
 resetAndStartGame(); 
@@ -41,6 +43,8 @@ resetAndStartGame();
 $(document).on('click', ".crystal", function () {
 
     var num = parseInt($(this).attr('data-number'));
+
+    $("#pervious").html(pervious); 
 
     pervious += num;
     console.log(pervious);
